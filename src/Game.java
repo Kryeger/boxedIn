@@ -1,30 +1,40 @@
-public class Game {
+import utils.Log;
 
-    private Window _window;
+import javax.swing.*;
+
+public class Game extends JFrame {
+
+    private JButton playBtn = new JButton("Play");
+
     private Config _config;
 
-    Game(Window window, Config config) {
-        _window = window;
+    Game(Config config) {
         _config = config;
+
+        init();
     }
 
-    public Window getWindow() {
-        return _window;
+    private void init() {
+        //WINDOW
+        this.setTitle("BoxedIn");
+        this.setSize(1280, 720);
+        this.setVisible( true );
+        this.setLayout(null);
+        this.setResizable(false);
+
+        //BUTTONS
+        playBtn.setBounds(10, 10, 100, 50);
+
+        playBtn.addActionListener((e) -> {
+
+            start();
+
+        });
+
+        this.add(playBtn);
     }
 
-    public void setWindow(Window window) {
-        _window = window;
-    }
-
-    public Config getConfig() {
-        return _config;
-    }
-
-    public void setConfig(Config config) {
-        _config = config;
-    }
-
-    public void start() {
+    private void start(){
 
     }
 
