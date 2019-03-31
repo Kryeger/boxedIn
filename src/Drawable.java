@@ -4,9 +4,9 @@ import javax.swing.*;
 
 public class Drawable extends JLabel {
 
-    public Drawable(Entity e) {
+    public Drawable(Entity entity) {
 
-        setIcon(new ImageIcon(getClass().getResource("res/" + e.getSprite())));
+        setIcon(new ImageIcon(getClass().getResource("res/" + entity.getSprite())));
 
         setSize(Game.spriteSize, Game.spriteSize);
 

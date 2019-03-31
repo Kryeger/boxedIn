@@ -1,21 +1,35 @@
 public class Entity {
 
-    private String _name;
+    static int lastid = 0;
+
+    private String _type;
     private String _sprite;
     private boolean _solid;
+    private int _x;
+    private int _y;
 
-    public Entity(String name, String sprite, boolean solid) {
-        _name = name;
+    Entity(){}
+
+    public Entity(String type, String sprite, boolean solid, int x, int y) {
+        _type = type;
         _sprite = sprite;
         _solid = solid;
+        _x = x;
+        _y = y;
+
+        lastid++;
     }
 
-    public String getName() {
-        return _name;
+    public static String getNextId() {
+        return String.valueOf(lastid);
     }
 
-    public void setName(String name) {
-        _name = name;
+    public String getType() {
+        return _type;
+    }
+
+    public void setType(String type) {
+        _type = type;
     }
 
     public String getSprite() {
@@ -32,5 +46,21 @@ public class Entity {
 
     public void setSolid(boolean solid) {
         _solid = solid;
+    }
+
+    public int getX() {
+        return _x;
+    }
+
+    public void setX(int x) {
+        _x = x;
+    }
+
+    public int getY() {
+        return _y;
+    }
+
+    public void setY(int y) {
+        _y = y;
     }
 }
